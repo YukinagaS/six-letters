@@ -1,46 +1,17 @@
+import { nanoid } from 'nanoid'
+
 export default function Gameboard() {
+
+
   return (
-    <section className="my-6 flex flex-col items-center gap-2">
-      <div className="flex flex-row gap-1">
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-      </div>
-      <div className="flex flex-row gap-1">
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-      </div>
-      <div className="flex flex-row gap-1">
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-      </div>
-      <div className="flex flex-row gap-1">
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-      </div>
-      <div className="flex flex-row gap-1">
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-        <div className="h-10 w-10 rounded border"></div>
-      </div>
+    <section className="mb-10 flex flex-col items-center gap-2">
+      {Array.from({ length: 6 }, () => (
+        <div key={nanoid} className="flex flex-row gap-1">
+          {Array.from({ length: 5}, () => (
+            <div key={nanoid} className="box-empty"></div>
+          ))}
+        </div>
+      ))}
     </section>
   )
 }

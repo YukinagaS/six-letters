@@ -23,12 +23,14 @@ export default {
       "L"
     ],
     "bottom": [
+      "ENT",
       "Z",
       "X",
       "C",
       "V",
       "B",
       "N",
-      "M"
+      "M",
+      "DEL",
     ]
 }
