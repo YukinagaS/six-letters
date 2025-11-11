@@ -4,7 +4,7 @@ import Keyboard from "./components/Keyboard"
 export default function App() {
   return (
     <div className="h-full w-full bg-black text-white text-center flex flex-col">
-      <header className="py-4 mb-6">
+      <header className="py-5">
         <h1 className="text-5xl font-bold tracking-widest">SIXTER</h1>
       </header>
 
