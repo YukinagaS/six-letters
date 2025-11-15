@@ -1,7 +1,37 @@
+import { useState, useEffect } from 'react'
 import Gameboard from "./components/Gameboard"
 import Keyboard from "./components/Keyboard"
 
 export default function App() {
+  const [answer, setAnswer] = useState("ANSWER".split(""))
+  const [currentGuess, setCurrentGuess] = useState([])
+  const [submissions, setSubmissions] = useState([])
+
+  useEffect(() => {
+    console.log(`Guess: ${currentGuess}`);
+  }, [currentGuess])
+
+  useEffect(() => {
+    console.log(`Submissions: ${submissions}`);
+  }, [submissions])
+
+  function addGuessedLetter(letter) {
+    if(currentGuess.length < 6){
+      setCurrentGuess(prev => [...prev, letter])
+    }
+  }
+
+  function removeGuessedLetter() {
+    setCurrentGuess(prev => prev.slice(0, -1))
+  }
+
+  function submitGuess() {
+    if(currentGuess.length === 6){
+      setSubmissions(prev => [...prev, currentGuess.join("")])
+      setCurrentGuess([])
+    }
+  }
+
   return (
     <div className="h-full w-full bg-black text-white text-center flex flex-col">
       <header className="py-5">
@@ -9,8 +39,15 @@ export default function App() {
       </header>
 
       <main className="flex-1 mx-auto">
-        <Gameboard />
-        <Keyboard />
+        <Gameboard
+          currentGuess={currentGuess}
+          submissions={submissions}
+        />
+        <Keyboard
+          addGuessedLetter={addGuessedLetter}
+          removeGuessedLetter={removeGuessedLetter}
+          submitGuess={submitGuess}
+        />
       </main>
 
       <footer>

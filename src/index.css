@@ -12,14 +12,14 @@ body, html {
   width: 100%;
 }
 
-.box-empty {
-  @apply h-14 w-14 rounded border
+.box-letter {
+  @apply h-14 w-14 rounded border text-4xl grid place-items-center
 }
 
 .btn-kb {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-10
+  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-10 cursor-pointer
 }
 
 .btn-wide {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-18
+  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-18 cursor-pointer
 }
