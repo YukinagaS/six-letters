@@ -13,13 +13,13 @@ body, html {
 }
 
 .box-letter {
-  @apply h-14 w-14 rounded border text-4xl grid place-items-center
+  @apply h-12 w-12 sm:h-14 sm:w-14 rounded border text-3xl sm:text-4xl grid place-items-center
 }
 
 .btn-kb {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-10 cursor-pointer
+  @apply bg-stone-600 text-zinc-100 font-bold rounded h-10 w-8 sm:h-12 sm:w-10 cursor-pointer
 }
 
 .btn-wide {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-12 w-18 cursor-pointer
+  @apply bg-stone-600 text-zinc-100 font-bold rounded h-10 w-14 sm:h-12 sm:w-18 cursor-pointer
 }

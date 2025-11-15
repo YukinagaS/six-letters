@@ -33,12 +33,12 @@ export default function App() {
   }
 
   return (
-    <div className="h-full w-full bg-black text-white text-center flex flex-col">
+    <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
       <header className="py-5">
-        <h1 className="text-5xl font-bold tracking-widest">SIXTER</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-widest">SIXTER</h1>
       </header>
 
-      <main className="flex-1 mx-auto">
+      <main className="flex-1 w-full flex flex-col items-center">
         <Gameboard
           currentGuess={currentGuess}
           submissions={submissions}
@@ -50,8 +50,8 @@ export default function App() {
         />
       </main>
 
-      <footer>
-        <p className="font-light text-sm">© Yukinaga Heavy Industries, Inc.</p>
+      <footer className="py-4">
+        <p className="font-light text-xs sm:text-sm">© Yukinaga Heavy Industries, Inc.</p>
       </footer>
 
     </div>
