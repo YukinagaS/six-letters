@@ -7,14 +7,6 @@ export default function App() {
   const [currentGuess, setCurrentGuess] = useState([])
   const [submissions, setSubmissions] = useState([])
 
-  useEffect(() => {
-    console.log(`Guess: ${currentGuess}`);
-  }, [currentGuess])
-
-  useEffect(() => {
-    console.log(`Submissions: ${submissions}`);
-  }, [submissions])
-
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
       setCurrentGuess(prev => [...prev, letter])
@@ -31,6 +23,23 @@ export default function App() {
       setCurrentGuess([])
     }
   }
+
+  useEffect(() => {
+    function handleKeyPress(event) {
+      const key = event.key.toUpperCase();
+      if (/^[A-Z]$/.test(key)) {
+        addGuessedLetter(key);
+      } else if (key === 'BACKSPACE' || key === 'DELETE') {
+        removeGuessedLetter();
+      } else if (key === 'ENTER'){
+        submitGuess();
+      }
+    }
+    window.addEventListener('keyup', handleKeyPress);
+    return () => {
+      window.removeEventListener('keyup', handleKeyPress);
+    };
+  });
 
   return (
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
