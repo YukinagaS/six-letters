@@ -7,6 +7,11 @@ export default function App() {
   const [currentGuess, setCurrentGuess] = useState([])
   const [submissions, setSubmissions] = useState([])
 
+  useEffect(() => {
+    console.log(submissions);
+
+  }, [submissions]);
+
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
       setCurrentGuess(prev => [...prev, letter])
@@ -17,9 +22,25 @@ export default function App() {
     setCurrentGuess(prev => prev.slice(0, -1))
   }
 
+  function checkGuess() {
+    return currentGuess.map((letter, i) => {
+      if (answer.includes(letter) && answer[i] === letter) {
+        // Set green
+        return {letter: letter, color: "bg-green-600"}
+      } else if (answer.includes(letter) && answer[i] !== letter) {
+        // Set yellow
+        return {letter: letter, color: "bg-yellow-600"}
+      } else {
+        //Set gray
+        return {letter: letter, color: "bg-slate-600"}
+      }
+    })
+  }
+
   function submitGuess() {
     if(currentGuess.length === 6){
-      setSubmissions(prev => [...prev, currentGuess.join("")])
+      const checkedGuess = checkGuess()
+      setSubmissions(prev => [...prev, checkedGuess])
       setCurrentGuess([])
     }
   }
@@ -39,7 +60,7 @@ export default function App() {
     return () => {
       window.removeEventListener('keyup', handleKeyPress);
     };
-  });
+  }, [currentGuess, submissions]);
 
   return (
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
