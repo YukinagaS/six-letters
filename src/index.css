@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-correct: oklch(62.7% 0.194 149.214);
+  --color-present: oklch(68.1% 0.162 75.834);
+  --color-absent: oklch(27.9% 0.041 260.031);
+}
+
 body, html {
   margin: 0;
   padding: 0;

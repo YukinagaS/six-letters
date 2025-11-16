@@ -1,41 +1,47 @@
-import { useState, useEffect } from 'react'
-import Gameboard from "./components/Gameboard"
-import Keyboard from "./components/Keyboard"
+import { useState, useEffect } from 'react';
+import Gameboard from "./components/Gameboard";
+import Keyboard from "./components/Keyboard";
 
 export default function App() {
-  const [answer, setAnswer] = useState("ANSWER".split(""))
-  const [currentGuess, setCurrentGuess] = useState([])
-  const [submissions, setSubmissions] = useState([])
+  const [answer, setAnswer] = useState("BANANA".split(""));
+  const [currentGuess, setCurrentGuess] = useState([]);
+  const [submissions, setSubmissions] = useState([]);
 
   useEffect(() => {
-    console.log(submissions);
-
+    console.log(`${submissions}`);
   }, [submissions]);
 
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
       setCurrentGuess(prev => [...prev, letter])
     }
-  }
+  };
 
   function removeGuessedLetter() {
     setCurrentGuess(prev => prev.slice(0, -1))
-  }
+  };
 
   function checkGuess() {
-    return currentGuess.map((letter, i) => {
-      if (answer.includes(letter) && answer[i] === letter) {
-        // Set green
-        return {letter: letter, color: "bg-green-600"}
-      } else if (answer.includes(letter) && answer[i] !== letter) {
-        // Set yellow
-        return {letter: letter, color: "bg-yellow-600"}
-      } else {
-        //Set gray
-        return {letter: letter, color: "bg-slate-600"}
-      }
+    // Count the instances of each letter in the answer
+    const answerLetterCount = {}
+    answer.forEach((letter) => answerLetterCount[letter] = answer.filter(moji => moji === letter).length)
+    // Subtract correct(green) guesses to account for remaining yellows.
+    const remainingPresent = answerLetterCount;
+    currentGuess.forEach((letter, i) => {
+      (answer[i] === letter) && remainingPresent[letter]--;
     })
-  }
+
+    return currentGuess.map((letter, i) => {
+      if(answer[i] === letter) { // If correct, green. Always.
+        return {letter: letter, color: "bg-correct"};
+      } else  if (remainingPresent[letter] > 0) { // Check if remaining yellows can apply.
+        remainingPresent[letter]--;
+        return {letter: letter, color: "bg-present"};
+      } else {
+        return {letter: letter, color: "bg-absent"};
+      }
+    });
+  };
 
   function submitGuess() {
     if(currentGuess.length === 6){
@@ -43,8 +49,9 @@ export default function App() {
       setSubmissions(prev => [...prev, checkedGuess])
       setCurrentGuess([])
     }
-  }
+  };
 
+  // Listen for keyboard and reset listener
   useEffect(() => {
     function handleKeyPress(event) {
       const key = event.key.toUpperCase();
