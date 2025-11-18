@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import Gameboard from "./components/Gameboard";
 import Keyboard from "./components/Keyboard";
+import words from './data/word_list';
 
 export default function App() {
-  const [answer, setAnswer] = useState("BANANA".split(""));
+  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * words.length)].toUpperCase().split(''));
   const [currentGuess, setCurrentGuess] = useState([]);
   const [submissions, setSubmissions] = useState([]);
   const [usedLetters, setUsedLetters] = useState({
@@ -12,9 +13,13 @@ export default function App() {
     'absent': new Set()
   });
 
+  const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter)
+  const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''))
+
+
   useEffect(() => {
-    console.log(Object.values(usedLetters));
-  }, [usedLetters]);
+    console.log()
+  }, [submissions]);
 
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
@@ -86,9 +91,9 @@ export default function App() {
 
   function submitGuess() {
     if(currentGuess.length === 6){
-      const checkedGuess = checkGuess()
-      setSubmissions(prev => [...prev, checkedGuess])
-      setCurrentGuess([])
+      const checkedGuess = checkGuess();
+      setSubmissions(prev => [...prev, checkedGuess]);
+      setCurrentGuess([]);
     }
   };
 
@@ -104,7 +109,7 @@ export default function App() {
         submitGuess();
       }
     }
-    window.addEventListener('keyup', handleKeyPress);
+    gameOver ? null : window.addEventListener('keyup', handleKeyPress);
     return () => {
       window.removeEventListener('keyup', handleKeyPress);
     };
@@ -113,7 +118,9 @@ export default function App() {
   return (
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
       <header className="py-5">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-widest">SIXTER</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-widest">
+          { gameOver ? `${answer.join('')}` : 'SIXTER'}
+        </h1>
       </header>
 
       <main className="flex-1 w-full flex flex-col items-center">
@@ -122,6 +129,7 @@ export default function App() {
           submissions={submissions}
         />
         <Keyboard
+          gameOver={gameOver}
           addGuessedLetter={addGuessedLetter}
           removeGuessedLetter={removeGuessedLetter}
           submitGuess={submitGuess}

@@ -1,7 +1,7 @@
 import keys from '../data/ENG_keyboard';
 import clsx from 'clsx';
 
-export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submitGuess, usedLetters }) {
+export default function Keyboard({ gameOver, addGuessedLetter, removeGuessedLetter, submitGuess, usedLetters }) {
   const kbRows = keys.map((row, rowIndex) => {
     return (
       <div key={rowIndex} className="flex flex-row gap-1">
@@ -18,6 +18,7 @@ export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submit
               <button
                 key={keyIndex}
                 className={`btn-kb ${keyColor}`}
+                disabled={gameOver}
                 onClick={() => addGuessedLetter(key)}
               >
                 {key}
@@ -29,6 +30,7 @@ export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submit
               <button
                 key={keyIndex}
                 className={`btn-wide ${keyColor}`}
+                disabled={gameOver}
                 onClick={() => removeGuessedLetter()}
               >
                 {key}
@@ -40,6 +42,7 @@ export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submit
               <button
                 key={keyIndex}
                 className={`btn-wide ${keyColor}`}
+                disabled={gameOver}
                 onClick={() => submitGuess()}
               >
                 {key}
