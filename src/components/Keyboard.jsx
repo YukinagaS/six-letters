@@ -1,16 +1,23 @@
-import keys from '../data/ENG_keyboard'
+import keys from '../data/ENG_keyboard';
+import clsx from 'clsx';
 
-export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submitGuess }) {
+export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submitGuess, usedLetters }) {
   const kbRows = keys.map((row, rowIndex) => {
     return (
       <div key={rowIndex} className="flex flex-row gap-1">
         {row.map((key, keyIndex) => {
+          const keyColor = clsx(
+            {'bg-correct': usedLetters.correct.has(key)},
+            {'bg-present': usedLetters.present.has(key)},
+            {'bg-absent': usedLetters.absent.has(key)},
+            {'bg-unused': !Object.values(usedLetters).some(set => set.has(key))}
+          );
           if(key !== "ENT" && key !== "DEL"){
             // Return for all letter keys
             return (
               <button
                 key={keyIndex}
-                className="btn-kb"
+                className={`btn-kb ${keyColor}`}
                 onClick={() => addGuessedLetter(key)}
               >
                 {key}
@@ -21,7 +28,7 @@ export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submit
             return (
               <button
                 key={keyIndex}
-                className="btn-wide"
+                className={`btn-wide ${keyColor}`}
                 onClick={() => removeGuessedLetter()}
               >
                 {key}
@@ -32,7 +39,7 @@ export default function Keyboard({ addGuessedLetter, removeGuessedLetter, submit
             return (
               <button
                 key={keyIndex}
-                className="btn-wide"
+                className={`btn-wide ${keyColor}`}
                 onClick={() => submitGuess()}
               >
                 {key}

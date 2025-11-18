@@ -4,6 +4,7 @@
   --color-correct: oklch(62.7% 0.194 149.214);
   --color-present: oklch(68.1% 0.162 75.834);
   --color-absent: oklch(27.9% 0.041 260.031);
+  --color-unused: oklch(44.4% 0.011 73.639)
 }
 
 body, html {
@@ -23,9 +24,9 @@ body, html {
 }
 
 .btn-kb {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-10 w-8 sm:h-12 sm:w-10 cursor-pointer
+  @apply text-zinc-100 font-bold rounded h-12 w-8 sm:h-14 sm:w-10 cursor-pointer
 }
 
 .btn-wide {
-  @apply bg-stone-600 text-zinc-100 font-bold rounded h-10 w-14 sm:h-12 sm:w-18 cursor-pointer
+  @apply text-zinc-100 font-bold rounded h-12 w-14 sm:h-14 sm:w-18 cursor-pointer
 }
