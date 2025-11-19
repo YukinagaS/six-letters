@@ -139,11 +139,19 @@ export default function App() {
         </h1>
       </header>
 
-      <main className="flex-1 w-full flex flex-col items-center">
+      <main className="flex-1 w-full flex flex-col items-center gap-6">
         <Gameboard
           currentGuess={currentGuess}
           submissions={submissions}
-        />
+          />
+
+        { gameOver &&
+          <section>
+            <h3 className="text-xl sm:text-2xl">DEFINITION</h3>
+            <p className="font-light text-sm sm:text-lg">{data[dayOne - today].definition}.</p>
+          </section>
+        }
+
         <Keyboard
           gameOver={gameOver}
           addGuessedLetter={addGuessedLetter}

@@ -1,7 +1,7 @@
 
 export default function Gameboard({ currentGuess, submissions }) {
   return (
-    <section className="mb-10 flex flex-col items-center gap-2">
+    <section className="flex flex-col items-center gap-2">
       {Array.from({ length: 7 }, (_, rowIndex) => {
         let rowData;
         if (rowIndex < submissions.length){
