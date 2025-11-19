@@ -17,11 +17,12 @@ export default function App() {
 
   const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter)
   const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''))
+  const illegalWord = (currentGuess.length === 6 && !checkLegalWord())
 
 
   useEffect(() => {
-    console.log(answer)
-  }, [answer]);
+    console.log(illegalWord)
+  }, [currentGuess]);
 
   function getTodaysDate() {
     const date = new Date()
@@ -101,12 +102,12 @@ export default function App() {
     return result
   };
 
-  function legalWord() {
+  function checkLegalWord() {
     return data.some((obj) => obj.word === currentGuess.join('').toLowerCase())
   }
 
   function submitGuess() {
-    if(currentGuess.length === 6 && legalWord()){
+    if(currentGuess.length === 6 && checkLegalWord()){
       const checkedGuess = checkGuess();
       setSubmissions(prev => [...prev, checkedGuess]);
       setCurrentGuess([]);
@@ -141,6 +142,7 @@ export default function App() {
 
       <main className="flex-1 w-full flex flex-col items-center gap-6">
         <Gameboard
+          illegalWord={illegalWord}
           currentGuess={currentGuess}
           submissions={submissions}
           />

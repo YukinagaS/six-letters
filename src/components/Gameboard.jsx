@@ -1,5 +1,4 @@
-
-export default function Gameboard({ currentGuess, submissions }) {
+export default function Gameboard({ illegalWord, currentGuess, submissions }) {
   return (
     <section className="flex flex-col items-center gap-2">
       {Array.from({ length: 7 }, (_, rowIndex) => {
@@ -21,7 +20,7 @@ export default function Gameboard({ currentGuess, submissions }) {
 
               return (
                 <div key={colIndex} className={`box-letter ${color}`}>
-                  {letter}
+                  <span className={illegalWord ? "text-red-600" : "text-white"}>{letter}</span>
                 </div>
               )
             })}
