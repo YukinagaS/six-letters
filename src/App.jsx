@@ -8,21 +8,24 @@ export default function App() {
   const [today] = useState(getTodaysDate())
   const [answer] = useState(getTodaysWord());
   const [currentGuess, setCurrentGuess] = useState([]);
-  const [submissions, setSubmissions] = useState([]);
-  const [usedLetters, setUsedLetters] = useState({
-    'correct': new Set(),
-    'present': new Set(),
-    'absent': new Set()
+  const [submissions, setSubmissions] = useState(() => {
+    const save = localStorage.getItem('submissions');
+    return save ? JSON.parse(save) : [];
+  });
+  const [usedLetters, setUsedLetters] = useState(() => {
+    const save = localStorage.getItem('usedLetters');
+    return save ? restoreUsedLettersFromSave(save) : {'correct': new Set(),'present': new Set(),'absent': new Set()};
   });
 
-  const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter)
-  const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''))
-  const illegalWord = (currentGuess.length === 6 && !checkLegalWord())
+  const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter);
+  const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''));
+  const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
 
 
   useEffect(() => {
-    console.log(illegalWord)
-  }, [currentGuess]);
+    console.log(`State: ${JSON.stringify(usedLetters)}`)
+    console.log(`Local: ${localStorage.getItem('usedLetters')}`)
+  }, [submissions]);
 
   function getTodaysDate() {
     const date = new Date()
@@ -109,10 +112,27 @@ export default function App() {
   function submitGuess() {
     if(currentGuess.length === 6 && checkLegalWord()){
       const checkedGuess = checkGuess();
-      setSubmissions(prev => [...prev, checkedGuess]);
       setCurrentGuess([]);
+      setSubmissions(prev => [...prev, checkedGuess]);
     }
   };
+
+  function convertUsedLettersForSave() {
+    return {
+      'correct': Array.from(usedLetters.correct),
+      'present': Array.from(usedLetters.present),
+      'absent': Array.from(usedLetters.absent)
+    }
+  }
+
+  function restoreUsedLettersFromSave(save) {
+    const buildObject = JSON.parse(save);
+    return {
+      "correct": new Set(Array.from(buildObject.correct)),
+      "present": new Set(Array.from(buildObject.present)),
+      "absent": new Set(Array.from(buildObject.absent))
+    }
+  }
 
   // Listen for keyboard and reset listener
   useEffect(() => {
@@ -131,6 +151,11 @@ export default function App() {
       window.removeEventListener('keyup', handleKeyPress);
     };
   }, [currentGuess, submissions]);
+
+  useEffect(() => {
+    localStorage.setItem('submissions', JSON.stringify(submissions));
+    localStorage.setItem('usedLetters', JSON.stringify(convertUsedLettersForSave()));
+  }, [submissions, usedLetters]);
 
   return (
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
