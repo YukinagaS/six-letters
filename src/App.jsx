@@ -4,16 +4,17 @@ import Keyboard from "./components/Keyboard";
 import data from './data/words_defs_pos.json';
 
 export default function App() {
-  const dayOne = "20251119"
-  const [today] = useState(getTodaysDate())
+  const dayOne = "20251119";
+  const lastDate = localStorage.getItem('lastPlayDate');
+  const [today] = useState(getTodaysDate());
   const [answer] = useState(getTodaysWord());
   const [currentGuess, setCurrentGuess] = useState([]);
   const [submissions, setSubmissions] = useState(() => {
-    const save = localStorage.getItem('submissions');
+    const save = (lastDate === today) ? localStorage.getItem('submissions') : null;
     return save ? JSON.parse(save) : [];
   });
   const [usedLetters, setUsedLetters] = useState(() => {
-    const save = localStorage.getItem('usedLetters');
+    const save = (lastDate === today) ? localStorage.getItem('usedLetters') : null;
     return save ? restoreUsedLettersFromSave(save) : {'correct': new Set(),'present': new Set(),'absent': new Set()};
   });
 
@@ -22,10 +23,10 @@ export default function App() {
   const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
 
 
-  useEffect(() => {
-    console.log(`State: ${JSON.stringify(usedLetters)}`)
-    console.log(`Local: ${localStorage.getItem('usedLetters')}`)
-  }, [submissions]);
+  // useEffect(() => {
+  //   console.log(`State: ${JSON.stringify(usedLetters)}`)
+  //   console.log(`Local: ${localStorage.getItem('usedLetters')}`)
+  // }, [submissions]);
 
   function getTodaysDate() {
     const date = new Date()
@@ -153,6 +154,7 @@ export default function App() {
   }, [currentGuess, submissions]);
 
   useEffect(() => {
+    localStorage.setItem('lastPlayDate', today)
     localStorage.setItem('submissions', JSON.stringify(submissions));
     localStorage.setItem('usedLetters', JSON.stringify(convertUsedLettersForSave()));
   }, [submissions, usedLetters]);
