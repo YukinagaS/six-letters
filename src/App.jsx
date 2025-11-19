@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import Gameboard from "./components/Gameboard";
 import Keyboard from "./components/Keyboard";
-import words from './data/word_list';
+import data from './data/words_defs_pos.json';
 
 export default function App() {
-  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * words.length)].toUpperCase().split(''));
+  const dayOne = "20251119"
+  const [today] = useState(getTodaysDate())
+  const [answer] = useState(getTodaysWord());
   const [currentGuess, setCurrentGuess] = useState([]);
   const [submissions, setSubmissions] = useState([]);
   const [usedLetters, setUsedLetters] = useState({
@@ -18,8 +20,18 @@ export default function App() {
 
 
   useEffect(() => {
-    console.log()
-  }, [submissions]);
+    console.log(answer)
+  }, [answer]);
+
+  function getTodaysDate() {
+    const date = new Date()
+    return `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
+  }
+
+  function getTodaysWord() {
+    const todaysObject = data[dayOne - today]
+    return todaysObject.word.toUpperCase().split('')
+  }
 
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
@@ -89,8 +101,12 @@ export default function App() {
     return result
   };
 
+  function legalWord() {
+    return data.some((obj) => obj.word === currentGuess.join('').toLowerCase())
+  }
+
   function submitGuess() {
-    if(currentGuess.length === 6){
+    if(currentGuess.length === 6 && legalWord()){
       const checkedGuess = checkGuess();
       setSubmissions(prev => [...prev, checkedGuess]);
       setCurrentGuess([]);
