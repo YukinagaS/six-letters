@@ -34,7 +34,7 @@ export default function App() {
   }
 
   function getTodaysWord() {
-    const todaysObject = data[dayOne - today]
+    const todaysObject = data[today - dayOne]
     return todaysObject.word.toUpperCase().split('')
   }
 
@@ -177,7 +177,7 @@ export default function App() {
         { gameOver &&
           <section className="w-sm">
             <h3 className="text-xl sm:text-2xl">DEFINITION</h3>
-            <p className="font-light text-sm sm:text-lg">{data[dayOne - today].definition}.</p>
+            <p className="font-light text-sm sm:text-lg">{data[today - dayOne].definition}.</p>
           </section>
         }
 
