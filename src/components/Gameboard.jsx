@@ -20,7 +20,7 @@ export default function Gameboard({ illegalWord, currentGuess, submissions }) {
 
               return (
                 <div key={colIndex} className={`box-letter ${color}`}>
-                  <span className={illegalWord ? "text-red-600" : "text-white"}>{letter}</span>
+                  <span className={illegalWord && rowIndex === submissions.length ? "text-red-600" : "text-white"}>{letter}</span>
                 </div>
               )
             })}
