@@ -162,7 +162,7 @@ export default function App() {
   return (
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
       <header className="py-5">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-widest">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-widest">
           { gameOver ? `${answer.join('')}` : 'SIXTER'}
         </h1>
       </header>
