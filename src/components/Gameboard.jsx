@@ -1,4 +1,52 @@
-export default function Gameboard({ illegalWord, currentGuess, submissions }) {
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+
+gsap.registerPlugin(useGSAP);
+
+export default function Gameboard({ gameOver,illegalWord, currentGuess, submissions, lastSubmission, answer }) {
+
+  const activeRow = useRef();
+  const prevRow = useRef();
+  const tl = useRef();
+
+  // Red bumper animation function
+  useGSAP(() => {
+    if (illegalWord) {
+      tl.current = gsap
+        .timeline({repeat: 1})
+        .to(activeRow.current, { x: 15, duration: 0.03, repeat: 1, yoyo: true})
+        .to(activeRow.current, { x: -15, duration: 0.03, repeat: 1, yoyo: true})
+    }
+  }, { dependencies: [illegalWord] });
+
+  // Winning wave animation
+  useGSAP(() => {
+    if (lastSubmission?.join('') === answer.join('')) {
+      const targets = gsap.utils.toArray(".box-letter");
+      gsap.to(targets, {
+        y: -15,
+        duration: 0.25,
+        stagger: {
+          each: 0.1,
+          repeat: 1,
+          yoyo: true
+        }
+      });
+    };
+  }, {dependencies: [gameOver], scope: prevRow});
+
+  // For targeting animations
+  function labelRows(rowIndex) {
+    if (rowIndex === submissions.length) {
+      return activeRow
+    } else if ( rowIndex === submissions.length - 1) {
+      return prevRow
+    } else {
+      return null
+    }
+  };
+
   return (
     <section className="flex flex-col items-center gap-2">
       {Array.from({ length: 7 }, (_, rowIndex) => {
@@ -12,7 +60,7 @@ export default function Gameboard({ illegalWord, currentGuess, submissions }) {
         }
 
         return (
-          <div key={rowIndex} className="flex flex-row gap-1">
+          <div key={rowIndex} ref={labelRows(rowIndex)} className="flex flex-row gap-1">
             {Array.from({ length: 6 }, (_, colIndex) => {
               const object = rowData[colIndex];
               const letter = object?.letter || '';

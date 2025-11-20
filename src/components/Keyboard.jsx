@@ -1,10 +1,15 @@
+import { useRef } from 'react';
 import keys from '../data/ENG_keyboard';
 import clsx from 'clsx';
 
 export default function Keyboard({ gameOver, addGuessedLetter, removeGuessedLetter, submitGuess, usedLetters }) {
+
+  const container = useRef();
+  const keyRef = useRef();
+
   const kbRows = keys.map((row, rowIndex) => {
     return (
-      <div key={rowIndex} className="flex flex-row gap-1">
+      <div key={rowIndex} ref={container} className="flex flex-row gap-1">
         {row.map((key, keyIndex) => {
           const keyColor = clsx(
             {'bg-correct': usedLetters.correct.has(key)},
@@ -17,6 +22,7 @@ export default function Keyboard({ gameOver, addGuessedLetter, removeGuessedLett
             return (
               <button
                 key={keyIndex}
+                ref={keyRef}
                 className={`btn-kb ${keyColor}`}
                 disabled={gameOver}
                 onClick={() => addGuessedLetter(key)}
@@ -29,6 +35,7 @@ export default function Keyboard({ gameOver, addGuessedLetter, removeGuessedLett
             return (
               <button
                 key={keyIndex}
+                ref={keyRef}
                 className={`btn-wide ${keyColor}`}
                 disabled={gameOver}
                 onClick={() => removeGuessedLetter()}
@@ -41,6 +48,7 @@ export default function Keyboard({ gameOver, addGuessedLetter, removeGuessedLett
             return (
               <button
                 key={keyIndex}
+                ref={keyRef}
                 className={`btn-wide ${keyColor}`}
                 disabled={gameOver}
                 onClick={() => submitGuess()}

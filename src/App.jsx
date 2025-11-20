@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Gameboard from "./components/Gameboard";
 import Keyboard from "./components/Keyboard";
 import data from './data/words_defs_pos.json';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 export default function App() {
   const dayOne = "20251119";
@@ -22,11 +26,11 @@ export default function App() {
   const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''));
   const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
 
-
-  // useEffect(() => {
-  //   console.log(`State: ${JSON.stringify(usedLetters)}`)
-  //   console.log(`Local: ${localStorage.getItem('usedLetters')}`)
-  // }, [submissions]);
+  // GSAP animation for Definition
+  const definitionAnimRef = useRef();
+  useGSAP(() => {
+    gsap.fromTo(definitionAnimRef.current, {opacity: 0}, {opacity: 1})
+  }, { dependencies: [gameOver] });
 
   function getTodaysDate() {
     const date = new Date()
@@ -169,17 +173,22 @@ export default function App() {
 
       <main className="flex-1 w-full flex flex-col items-center gap-6">
         <Gameboard
+          gameOver={gameOver}
           illegalWord={illegalWord}
           currentGuess={currentGuess}
           submissions={submissions}
+          lastSubmission={lastSubmission}
+          answer={answer}
           />
 
-        { gameOver &&
-          <section className="w-sm">
-            <h3 className="text-xl sm:text-2xl">DEFINITION</h3>
-            <p className="font-light text-sm sm:text-lg">{data[today - dayOne].definition}.</p>
+          <section ref={definitionAnimRef} className="w-sm">
+            { gameOver &&
+            <>
+              <h3 className="text-xl sm:text-2xl">DEFINITION</h3>
+              <p className="font-light text-sm sm:text-lg">{data[today - dayOne].definition}.</p>
+            </>
+            }
           </section>
-        }
 
         <Keyboard
           gameOver={gameOver}
