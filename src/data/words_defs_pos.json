@@ -45,11 +45,6 @@
     "part_of_speech": "verb"
   },
   {
-    "word": "rights",
-    "definition": "Morally good, justified, or acceptable",
-    "part_of_speech": "adjective"
-  },
-  {
     "word": "public",
     "definition": "Of or concerning the people as a whole",
     "part_of_speech": "adjective"
@@ -71,12 +66,12 @@
   },
   {
     "word": "center",
-    "definition": "The middle point of a circle or sphere, equidistant from every point on the circumference or surface. \u2022 a point or part that is equally distant from all sides, ends, or surfaces of something",
+    "definition": "The middle point of a circle or sphere, equidistant from every point on the circumference or surface.",
     "part_of_speech": "noun"
   },
   {
     "word": "travel",
-    "definition": "LiNG , traveled trav\u0259ld ; also mainly British English travels, mainly British English travelling, mainly British English travelled) go from one place to another, typically over a distance of some length",
+    "definition": "To go from one place to another, typically over a distance of some length",
     "part_of_speech": "verb"
   },
   {
@@ -95,11 +90,6 @@
     "part_of_speech": "adverb"
   },
   {
-    "word": "hotels",
-    "definition": "An establishment providing accommodations, meals, and other services for travelers and tourists",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "office",
     "definition": "A room, set of rooms, or building used as a place for commercial, professional, or bureaucratic work",
     "part_of_speech": "noun"
@@ -110,19 +100,9 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "posted",
-    "definition": "A long, sturdy piece of timber or metal set upright in the ground and used to support something or as a marker",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "within",
     "definition": "Inside",
     "part_of_speech": "preposition"
-  },
-  {
-    "word": "states",
-    "definition": "The particular condition that someone or something is in at a specific time",
-    "part_of_speech": "noun"
   },
   {
     "word": "family",
@@ -130,18 +110,8 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "prices",
-    "definition": "The amount of money expected, required, or given in payment for something",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "sports",
-    "definition": "An activity involving physical exertion and skill in which an individual or team competes against another or others for entertainment",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "county",
-    "definition": "A political and administrative division of a state, providing certain local governmental services. \u2022 a territorial division of some countries, forming the chief unit of local administration. DERIVATIVES countywide adjective, adverb",
+    "definition": "A political and administrative division of a state, providing certain local governmental services.",
     "part_of_speech": "noun"
   },
   {
@@ -170,19 +140,9 @@
     "part_of_speech": "verb"
   },
   {
-    "word": "events",
-    "definition": "A thing that happens, especially one of importance",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "little",
     "definition": "Small in size, amount, or degree",
     "part_of_speech": "adjective"
-  },
-  {
-    "word": "movies",
-    "definition": "Mainly North American English a story or event recorded by a camera as a set of moving images and shown in a theater or on television; a motion picture",
-    "part_of_speech": "noun"
   },
   {
     "word": "source",
@@ -205,29 +165,19 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "canada",
-    "definition": "Canada Canada kan\u0259d\u0259 a country in northern North America, the second largest country in the world; population 35,900,000 ; capital, Ottawa; official languages, English and French. Eastern Canada was colonized by the French in the 17th century, but the British emerged as the ruling colonial power in 1763 after the Seven Years War. Canada became a federation of provinces with dominion status in 1867. The signing of the Constitution Act of 1982 was the final step in attaining legal independence from the UK; however, Canada remains a member of the Commonwealth of Nations. French-speakers are largely concentrated in Quebec, the focal point for the French-Canadian separatist movement",
-    "part_of_speech": null
-  },
-  {
     "word": "credit",
     "definition": "The ability of a customer to obtain goods or services before payment, based on the trust that payment will be made in the future",
     "part_of_speech": "noun"
   },
   {
     "word": "estate",
-    "definition": "An extensive area of land in the country, usually with a large house, owned by one person, family, or organization. \u2022 British English a housing or commercial development",
+    "definition": "An extensive area of land in the country, usually with a large house, owned by one person, family, or organization.",
     "part_of_speech": "noun"
   },
   {
     "word": "select",
     "definition": "Carefully choose as being the best or most suitable",
     "part_of_speech": "verb"
-  },
-  {
-    "word": "photos",
-    "definition": "A photograph. \u2022 informal a photo finish. verb informal take a photograph of",
-    "part_of_speech": "noun"
   },
   {
     "word": "thread",
@@ -260,11 +210,6 @@
     "part_of_speech": "verb"
   },
   {
-    "word": "forums",
-    "definition": "A place, meeting, or medium where ideas and views on a particular issue can be exchanged",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "better",
     "definition": "Of a more excellent or effective type or quality",
     "part_of_speech": "adjective"
@@ -276,22 +221,12 @@
   },
   {
     "word": "server",
-    "definition": "A person or thing that provides a service or commodity. \u2022 North American English a waiter or waitress. \u2022 Christian church a person assisting the celebrant at the celebration of the Eucharist. \u2022 a sideboard or similar piece of furniture, on which food to be served is placed. 2 a computer or computer program which manages access to a centralized resource or service in a network",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "issues",
-    "definition": "An important topic or problem for debate or discussion",
+    "definition": "A person or thing that provides a service or commodity.",
     "part_of_speech": "noun"
   },
   {
     "word": "street",
     "definition": "A public road in a city or town, typically with houses and buildings on one or both sides",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "things",
-    "definition": "An object that one need not, cannot, or does not wish to give a specific name to",
     "part_of_speech": "noun"
   },
   {
@@ -301,23 +236,13 @@
   },
   {
     "word": "mobile",
-    "definition": "M\u014dbl, m\u014db\u012bl able to move or be moved freely or easily",
+    "definition": "Able to move or be moved freely or easily",
     "part_of_speech": "adjective"
-  },
-  {
-    "word": "offers",
-    "definition": "Present or proffer for to accept or reject as so desired",
-    "part_of_speech": "verb"
   },
   {
     "word": "recent",
     "definition": "Having happened, begun, or been done not long ago or not long before; belonging to a past period of time comparatively close to the present",
     "part_of_speech": "adjective"
-  },
-  {
-    "word": "stores",
-    "definition": "Mainly North American English a retail establishment selling items to the public",
-    "part_of_speech": "noun"
   },
   {
     "word": "memory",
@@ -375,11 +300,6 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "groups",
-    "definition": "A number of people or things that are located close together or are considered or classed together",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "making",
     "definition": "The process of making or producing something",
     "part_of_speech": "noun"
@@ -388,11 +308,6 @@
     "word": "future",
     "definition": "The time or a period of time following the moment of speaking or writing; time regarded as still to come",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "london",
-    "definition": "London London l\u0259nd\u0259n the capital of the United Kingdom, situated in southeastern England on the River Thames; population 7,619,800 . London was settled as a river port and trading center, called Londinium, shortly after the Roman invasion of AD 43, and, since the Middle Ages, has been a flourishing center. It is divided administratively into the City of London, which is the country's financial center, and thirty-two boroughs 2 an industrial city in southwestern Ontario, Canada, situated to the north of Lake Erie; population 353,395 .",
-    "part_of_speech": null
   },
   {
     "word": "become",
@@ -415,28 +330,13 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "images",
-    "definition": "A representation of the external form of a person or thing in art",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "notice",
     "definition": "The fact of observing or paying attention to something",
     "part_of_speech": "noun"
   },
   {
-    "word": "others",
-    "definition": "Denoting a person or thing that is different or distinct from one already mentioned or known about",
-    "part_of_speech": "adjective"
-  },
-  {
     "word": "format",
     "definition": "The way in which something is arranged or set out",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "months",
-    "definition": "Each of the twelve named periods into which a year is divided",
     "part_of_speech": "noun"
   },
   {
@@ -471,14 +371,10 @@
   },
   {
     "word": "window",
-    "definition": "An opening in the wall or roof of a building or vehicle that is fitted with glass or other transparent material in a frame to admit light or air and allow people to see out. \u2022 a pane of glass filling a window",
+    "definition": "An opening in the wall or roof of a building or vehicle that is fitted with glass or other transparent material in a frame to admit light or air and allow people to see out.",
     "part_of_speech": "noun"
   },
-  {
-    "word": "france",
-    "definition": "France frans a country in western Europe, on the Atlantic Ocean; population 64,400,000 ; capital, Paris; official language, French. France became a major power under the Valois and Bourbon dynasties in the 16th\u201318th centuries and briefly dominated Europe under Napoleon after the overthrow of the monarchy in the French Revolution 1789. Defeated in the Franco-Prussian War 1870\u201371, the country also suffered much destruction and loss of life in World War I, and during World War II was occupied by the Germans. France was a founding member of the EEC in 1957",
-    "part_of_speech": null
-  },
+
   {
     "word": "region",
     "definition": "An area or division, especially part of a country or the world having definable characteristics but not always fixed boundaries",
@@ -491,7 +387,7 @@
   },
   {
     "word": "record",
-    "definition": "Rek\u0259rd a thing constituting a piece of evidence about the past, especially an account kept in writing or some other permanent form",
+    "definition": "A thing constituting a piece of evidence about the past, especially an account kept in writing or some other permanent form",
     "part_of_speech": "noun"
   },
   {
@@ -501,33 +397,13 @@
   },
   {
     "word": "update",
-    "definition": "\u018fpd\u0101t make more modern or up to date",
+    "definition": "To make more modern or up to date",
     "part_of_speech": "verb"
   },
   {
     "word": "either",
-    "definition": ", adverb used before the first of two alternatives that are being specified",
+    "definition": "Adverb used before the first of two alternatives that are being specified",
     "part_of_speech": "conjunction"
-  },
-  {
-    "word": "centre",
-    "definition": "The middle point of a circle or sphere, equidistant from every point on the circumference or surface. \u2022 a point or part that is equally distant from all sides, ends, or surfaces of something",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "europe",
-    "definition": "Europe Europe yo\u035dor\u0259p a continent in the northern hemisphere, separated from Africa on the south by the Mediterranean Sea and from Asia on the east roughly by the Bosporus, the Caucasus Mountains, and the Ural Mountains. Europe contains approximately 10 percent of the world's population. It consists of the western part of the landmass of which Asia forms the eastern part and includes the British Isles, Iceland, and most of the Mediterranean islands. Its recent history has been dominated by the decline of European states from their former colonial and economic preeminence, the emergence of the European Union among the wealthy democracies of western Europe, and the collapse of the Soviet Union with consequent changes of power in central and eastern Europe.",
-    "part_of_speech": null
-  },
-  {
-    "word": "topics",
-    "definition": "A matter dealt with in a text, discourse, or conversation; a subject",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "videos",
-    "definition": "The recording, reproducing, or broadcasting of moving visual images",
-    "part_of_speech": "noun"
   },
   {
     "word": "global",
@@ -537,11 +413,6 @@
   {
     "word": "player",
     "definition": "A person taking part in a sport or game",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "lyrics",
-    "definition": "The words of a song in popular music",
     "part_of_speech": "noun"
   },
   {
@@ -575,11 +446,6 @@
     "part_of_speech": "verb"
   },
   {
-    "word": "points",
-    "definition": "The tapered, sharp end of a tool, weapon, or other object",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "camera",
     "definition": "A device for recording visual images in the form of photographs, film, or video signals",
     "part_of_speech": "noun"
@@ -595,29 +461,14 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "models",
-    "definition": "A three-dimensional representation of a person or thing or of a proposed structure, typically on a smaller scale than the",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "simple",
-    "definition": "L\u0259r , simplest simpl\u0259st ) easily understood or done; presenting no difficulty",
+    "definition": "Easily understood or done; presenting no difficulty",
     "part_of_speech": "adjective"
-  },
-  {
-    "word": "friday",
-    "definition": "The day of the week before Saturday and following Thursday",
-    "part_of_speech": "noun"
   },
   {
     "word": "annual",
     "definition": "Occurring once every year",
     "part_of_speech": "adjective"
-  },
-  {
-    "word": "google",
-    "definition": "Search for information about on the internet, especially using the search engine Google",
-    "part_of_speech": "verb"
   },
   {
     "word": "church",
@@ -665,16 +516,6 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "orders",
-    "definition": "The arrangement or disposition of people or things in relation to each other according to a particular sequence, pattern, or method",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "africa",
-    "definition": "Africa Africa afr\u0259k\u0259 the second largest continent , a southward projection of the Old World landmass divided roughly in half by the equator and surrounded by sea except where the Isthmus of Suez joins it to Asia.",
-    "part_of_speech": null
-  },
-  {
     "word": "growth",
     "definition": "The process of increasing in physical size",
     "part_of_speech": "noun"
@@ -682,11 +523,6 @@
   {
     "word": "agency",
     "definition": "A business or organization established to provide a particular service, typically one that involves organizing transactions between two other parties",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "monday",
-    "definition": "The day of the week before Tuesday and following Sunday",
     "part_of_speech": "noun"
   },
   {
@@ -715,23 +551,13 @@
     "part_of_speech": "preposition"
   },
   {
-    "word": "needed",
-    "definition": "Require because it is essential or very important",
-    "part_of_speech": "verb"
-  },
-  {
     "word": "season",
-    "definition": "Each of the four divisions of the year marked by particular weather patterns and daylight hours, resulting from the earth's changing position with regard to the sun. \u2022 a period of the year characterized by a particular climatic feature or marked by a particular activity, event, or festivity",
+    "definition": "Each of the four divisions of the year marked by particular weather patterns and daylight hours, resulting from the earth's changing position with regard to the sun.",
     "part_of_speech": "noun"
   },
   {
     "word": "effect",
     "definition": "A change which is a result or consequence of an action or other cause",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "sunday",
-    "definition": "The day of the week before Monday and following Saturday, observed by Christians as a day of rest and religious worship and forming part of the weekend",
     "part_of_speech": "noun"
   },
   {
@@ -751,12 +577,12 @@
   },
   {
     "word": "silver",
-    "definition": "(Symbol",
+    "definition": "A precious shiny greyish-white metal, the chemical element of atomic number 47",
     "part_of_speech": "noun"
   },
   {
     "word": "inside",
-    "definition": "Ins\u012bd the inner side or surface of something",
+    "definition": "The inner side or surface of something",
     "part_of_speech": "noun"
   },
   {
@@ -773,16 +599,6 @@
     "word": "supply",
     "definition": "Make available to someone; provide",
     "part_of_speech": "verb"
-  },
-  {
-    "word": "robert",
-    "definition": "Robert Robert r\u00e4b\u0259rt the name of three kings of Scotland. \u2022 Robert I, reigned 1306\u201329; known as Robert the Bruce. He campaigned against Edward I, and defeated Edward II at Bannockburn . He re-established Scotland as a separate kingdom, negotiating the Treaty of Northampton . \u2022 Robert II, grandson of Robert the Bruce, reigned 1371\u201390. He was steward of Scotland from 1326 to 1371, and the first of the Stuart line. \u2022 Robert III, son of Robert II; reigned 1390\u20131406; born John. An accident rendered him physically disabled, resulting in a power struggle among members of his family.",
-    "part_of_speech": null
-  },
-  {
-    "word": "skills",
-    "definition": "The ability to do something well",
-    "part_of_speech": "noun"
   },
   {
     "word": "advice",
@@ -810,18 +626,13 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "values",
-    "definition": "The regard that something is held to deserve; the importance, worth, or usefulness of something",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "coming",
     "definition": "Due to happen or just beginning",
     "part_of_speech": "adjective"
   },
   {
     "word": "object",
-    "definition": "\u00c4bj\u0259k, \u00e4bjekt a material thing that can be seen and touched",
+    "definition": "A material thing that can be seen and touched",
     "part_of_speech": "noun"
   },
   {
@@ -845,11 +656,6 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "george",
-    "definition": "George j\u00f4rj the name of four kings of Great Britain and Ireland, one of Great Britain and Ireland , and one of the United Kingdom. \u2022 George I , great-grandson of James I; reigned 1714\u201327; elector of Hanover 1698\u20131727. The first British sovereign of the house of Hanover, he was unpopular in England because of his German manners and his inability to speak English. \u2022 George II , son of George I; reigned 1727\u201360; elector of Hanover 1727\u201360. He took an active part in the War of the Austrian Succession 1740\u201348. \u2022 George III , grandson of George II; reigned 1760\u20131820; elector of Hanover 1760\u20131815; king of Hanover 1815\u201320. He reigned during the time of the American Revolution and the War of 1812. His political influence declined from 1788 after bouts of mental illness. \u2022 George IV , son of George III; reigned 1820\u201330. Known as a patron of the arts and bon viveur, he had a bad reputation that was further damaged by his attempt to divorce his estranged wife Caroline of Brunswick just after coming to the throne. \u2022 George V , son of Edward VII; reigned 1910\u201336. He exercised restrained but important influence over British politics and played a significant role in the formation of the government in 1931. During World War I he changed the name of the royal house to Windsor. \u2022 George VI , son of George V; reigned 1936\u201352. He came to the throne when his older brother Edward VIII abdicated.",
-    "part_of_speech": null
-  },
-  {
     "word": "choice",
     "definition": "An act of selecting or making a decision when faced with two or more possibilities",
     "part_of_speech": "noun"
@@ -860,18 +666,8 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "levels",
-    "definition": "A horizontal plane or line with respect to the distance above or below a given point",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "letter",
     "definition": "A character representing one or more of the sounds used in speech; any of the symbols of an alphabet",
-    "part_of_speech": "noun"
-  },
-  {
-    "word": "phones",
-    "definition": "A telephone, mobile phone, or smartphone",
     "part_of_speech": "noun"
   },
   {
@@ -915,11 +711,6 @@
     "part_of_speech": "adjective"
   },
   {
-    "word": "thomas",
-    "definition": "Thomas, Clarence Thomas, Clarence t\u00e4m\u0259s , US Supreme Court associate justice since 1991. He chaired the Equal Employment Opportunity Commission 1982\u201390 and was a judge on the US Court of Appeals before being nominated to replace Thurgood Marshall on the Court. His appointment was approved only after a lengthy and controversial Senate hearing in which he had to respond to charges of sexual harassment brought by former colleague Anita Hill.",
-    "part_of_speech": null
-  },
-  {
     "word": "cancer",
     "definition": "A disease caused by an uncontrolled division of abnormal cells in a part of the body",
     "part_of_speech": "noun"
@@ -956,18 +747,13 @@
   },
   {
     "word": "survey",
-    "definition": "S\u0259rv\u0101 look carefully and thoroughly at , especially so as to appraise them",
+    "definition": "To look carefully and thoroughly at, especially so as to appraise them",
     "part_of_speech": "verb"
   },
   {
     "word": "animal",
     "definition": "A living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "mexico",
-    "definition": "Mexico Mexico meks\u0259k\u014d a country in southwestern North America, with extensive coastlines on the Gulf of Mexico and the Pacific Ocean, bordered by the US on the north; population 127,000,000 ; capital, Mexico City; language, Spanish . \u2022 a state of central Mexico, to the west of Mexico City; capital, Toluca de Lerdo. The center of both Mayan and Aztec civilizations, Mexico was conquered and colonized by the Spanish in the early 16th century. It remained under Spanish rule until independence was achieved in 1821; a republic was established three years later. Texas rebelled and broke away in 1836, while all the remaining territory north of the Rio Grande was lost to the US in the Mexican War of 1846\u201348",
-    "part_of_speech": null
   },
   {
     "word": "secure",
@@ -1038,11 +824,6 @@
     "word": "guides",
     "definition": "A person who advises or shows the way to others",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "amazon",
-    "definition": "Amazon Amazon am\u0259z\u00e4n, am\u0259z\u0259n a river in South America that flows more than 4,150 miles through Peru, Colombia, and Brazil into the Atlantic Ocean. It drains two-fifths of the continent and, in terms of water-flow, is the largest river in the world.",
-    "part_of_speech": null
   },
   {
     "word": "retail",
@@ -1193,11 +974,6 @@
     "word": "winter",
     "definition": "The coldest season of the year, in the northern hemisphere from December to February and in the southern hemisphere from June to August",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "boston",
-    "definition": "Boston Boston b\u00f4st\u0259n, b\u00e4st\u0259n a city in eastern Massachusetts, the capital of the state, on Massachusetts Bay; population 609,023 . It was founded c.1630 by the Massachusetts Bay Company under its governor, John Winthrop. Boston was the scene of many disturbances that led to the American Revolution at the end of the 18th century.",
-    "part_of_speech": null
   },
   {
     "word": "incest",
@@ -1490,19 +1266,9 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "fields",
-    "definition": "Fields, Dame Gracie Fields, Dame Gracie f\u0113ldz , English singer and comedienne; born Grace Stansfield.",
-    "part_of_speech": null
-  },
-  {
     "word": "breast",
     "definition": "Either of the two soft, protruding organs on the upper front of a woman's body that secrete milk after pregnancy. \u2022 the less-developed part of a man's body corresponding with a woman's breast. \u2022 a person's chest",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "kansas",
-    "definition": "Kansas Kansas kanz\u0259s a state in the central US; population 2,802,134 ; capital, Topeka. Acquired as part of the Louisiana Purchase in 1803, it became the 34th state of the US in 1861.",
-    "part_of_speech": null
   },
   {
     "word": "doctor",
@@ -1523,11 +1289,6 @@
     "word": "leader",
     "definition": "The person who leads or commands a group, organization, or country",
     "part_of_speech": "noun"
-  },
-  {
-    "word": "israel",
-    "definition": "Israel Israel izr\u0113\u0259l, izr\u0101l a country in the Middle East, on the Mediterranean Sea; population 8,100,000 ; capital , Jerusalem; languages, Hebrew , English, and Arabic. The modern state of Israel was established as a Jewish homeland in 1948, on land that was at that time part of the British mandated territory of Palestine. Israel was immediately attacked by the surrounding Arab states, which it defeated. The continuing conflict with the neighbouring Arabs, mainly over the rights of the Palestinians displaced from their homes or living under Israeli rule, has caused continual tension and intermittent armed conflict and military activity. Further wars occurred in 1956, 1967, and 1973, which resulted in Israeli occupation of eastern Jerusalem, the West Bank, the Gaza Strip, and the Golan Heights. In 1993 Israel and the Palestine Liberation Organization signed an agreement for limited Palestinian autonomy in the West Bank and the Gaza Strip, but this proved unsuccessful in bringing about an end to conflict. See also Palestine",
-    "part_of_speech": null
   },
   {
     "word": "flight",
@@ -1630,11 +1391,6 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "oregon",
-    "definition": "Oregon Oregon \u00f4r\u0259\u0261\u00e4n, \u00f4r\u0259\u0261n a state in the northwestern US, on the coast of the Pacific Ocean; population 3,790,060 ; capital, Salem. Britain ceded the territory to the US in 1846 and it became the 33rd state in 1859.",
-    "part_of_speech": null
-  },
-  {
     "word": "tables",
     "definition": "A piece of furniture with a flat top and one or more legs, providing a level surface on which objects may be placed, and that can be used for such purposes as eating, writing, working, or playing games",
     "part_of_speech": "noun"
@@ -1710,16 +1466,6 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "played",
-    "definition": "Engage in activity for enjoyment and recreation rather than a serious or practical purpose",
-    "part_of_speech": "verb"
-  },
-  {
-    "word": "shirts",
-    "definition": "A garment for the upper body made of cotton or a similar fabric, with a collar, sleeves, and buttons down the front",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "profit",
     "definition": "A financial gain, especially the difference between the amount earned and the amount spent in buying, operating, or producing something",
     "part_of_speech": "noun"
@@ -1728,11 +1474,6 @@
     "word": "expect",
     "definition": "Regard as likely to happen",
     "part_of_speech": "verb"
-  },
-  {
-    "word": "russia",
-    "definition": "Russia Russia r\u0259SH\u0259 a country in northern Asia and eastern Europe; population 143,500,000 ; capital, Moscow; language, Russian . Official name Russian Federation The modern state",
-    "part_of_speech": null
   },
   {
     "word": "golden",
@@ -1770,18 +1511,13 @@
     "part_of_speech": "noun"
   },
   {
-    "word": "issued",
-    "definition": "An important topic or problem for debate or discussion",
-    "part_of_speech": "noun"
-  },
-  {
     "word": "sexual",
     "definition": "Relating to the instincts, physiological processes, and activities connected with physical attraction or intimate physical contact between individuals",
     "part_of_speech": "adjective"
   },
   {
     "word": "flower",
-    "definition": "The seed-bearing part of a plant, consisting of reproductive organs that are typically surrounded by a brightly colored corolla and a green calyx . \u2022 a brightly colored and conspicuous example of the flower of a plant together with its stalk, typically used with others as a decoration or gift",
+    "definition": "The seed-bearing part of a plant, consisting of reproductive organs that are typically surrounded by a brightly colored corolla and a green calyx.",
     "part_of_speech": "noun"
   },
   {
@@ -1790,23 +1526,8 @@
     "part_of_speech": "verb"
   },
   {
-    "word": "stated",
-    "definition": "Clearly expressed or identified; specified",
-    "part_of_speech": "adjective"
-  },
-  {
-    "word": "hawaii",
-    "definition": "Hawaii Hawaii h\u0259w\u012b\u0113 a state of the US comprising a group of over twenty islands in the North Pacific Ocean; capital, Honolulu ; population ,288,198 . First settled by Polynesians, Hawaii was visited by Captain James Cook in 1778. It was annexed by the US in 1898 and became the 50th state in 1959. Former name Sandwich Islands \u2022 the largest island in the state of Hawaii.",
-    "part_of_speech": null
-  },
-  {
     "word": "covers",
-    "definition": "Put something on top of or in front of , especially in order to protect or conceal it",
-    "part_of_speech": "verb"
-  },
-  {
-    "word": "adults",
-    "definition": "A person who is fully grown or developed",
+    "definition": "A thing which lies on, over, or around something, especially in order to protect or conceal it.",
     "part_of_speech": "noun"
   },
   {
