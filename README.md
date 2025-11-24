@@ -1,6 +1,6 @@
 # SIXTER: A Wordle Clone
 
-Project link: [Sixter] (https://yukinagas.github.io/six-letters/)
+Project link: [Sixter](https://yukinagas.github.io/six-letters/)
 
 As a fan of word games, I wanted to create a clone of Wordle to practice with and reinforce my understand of React states and useEffect. Toward the end of the project, I also ventured into GSAP for the animations. 
 
