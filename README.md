@@ -1,16 +1,26 @@
-# React + Vite
+# SIXTER: A Wordle Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project link: [Sixter] (https://yukinagas.github.io/six-letters/)
 
-Currently, two official plugins are available:
+As a fan of word games, I wanted to create a clone of Wordle to practice with and reinforce my understand of React states and useEffect. Toward the end of the project, I also ventured into GSAP for the animations. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The logic is identical:
+* One word puzzle everyday.
+* Once you submit a guess, yellow letters are in the answer, but in the wrong place. Green letters are in the right place. Dark gray letters are not in the answer.
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* [React][react-url]
+* [Vite][vite-url]
+* [Tailwind CSS][tailwind-url]
+* [GSAP][gsap-url]
+* [CLSX][clsx-url]
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+<!-- Markdown Links & Images -->
+[react-url]: https://react.dev/
+[vite-url]: https://vite.dev/
+[gsap-url]: https://gsap.com/
+[clsx-url]: https://www.npmjs.com/package/clsx
+[tailwind-url]: https://tailwindcss.com/
