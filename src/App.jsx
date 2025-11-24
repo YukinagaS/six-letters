@@ -8,10 +8,17 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP);
 
 export default function App() {
-  const dayOne = "20251119";
-  const lastDate = localStorage.getItem('lastPlayDate');
+  const dayOne = 20251119;
+  const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
   const [today] = useState(getTodaysDate());
+
+  //Initialize answer and variables for checking
   const [answer] = useState(getTodaysWord());
+  const answerLetterCount = {};
+  answer.forEach((letter => {
+    answerLetterCount[letter] = (answerLetterCount[letter] ? answerLetterCount[letter] + 1 : 1);
+  }));
+
   const [currentGuess, setCurrentGuess] = useState([]);
   const [submissions, setSubmissions] = useState(() => {
     const save = (lastDate === today) ? localStorage.getItem('submissions') : null;
@@ -33,14 +40,14 @@ export default function App() {
   }, { dependencies: [gameOver] });
 
   function getTodaysDate() {
-    const date = new Date()
-    return `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
-  }
+    const date = new Date();
+    return (date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate());
+  };
 
   function getTodaysWord() {
-    const todaysObject = data[today - dayOne]
-    return todaysObject.word.toUpperCase().split('')
-  }
+    const todaysObject = data[today - dayOne];
+    return todaysObject.word.toUpperCase().split('');
+  };
 
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
@@ -53,14 +60,10 @@ export default function App() {
   };
 
   function checkGuess() {
-    // Count the instances of each letter in the answer
-    const answerLetterCount = {}
-    answer.forEach((letter) => answerLetterCount[letter] = answer.filter(moji => moji === letter).length)
-
     // Subtract correct(green) guesses to account for remaining yellows.
-    const remainingPresent = answerLetterCount;
+    const remainingPresent = structuredClone(answerLetterCount);
     currentGuess.forEach((letter, i) => {
-      (answer[i] === letter) && remainingPresent[letter]--;
+      if (answer[i] === letter) remainingPresent[letter]--;
     })
     const toAddCorrect = new Set();
     const toAddPresent = new Set();
@@ -69,12 +72,8 @@ export default function App() {
 
     const result = currentGuess.map((letter, i) => {
       if(answer[i] === letter) { // If correct, green. Always.
-        if (usedLetters.present.has(letter)){
-          toDeletePresent.add(letter);
-          toAddCorrect.add(letter)
-        } else if (!usedLetters.correct.has(letter)){
-          toAddCorrect.add(letter);
-        }
+        toDeletePresent.add(letter);
+        toAddCorrect.add(letter);
         return {letter: letter, color: "bg-correct"};
       } else  if (remainingPresent[letter] > 0) { // Check if remaining yellows can apply.
         if (!usedLetters.correct.has(letter) && !usedLetters.present.has(letter)){
@@ -83,27 +82,16 @@ export default function App() {
         remainingPresent[letter]--;
         return {letter: letter, color: "bg-present"};
       } else {
-        if (!usedLetters.absent.has(letter)){
-          toAddAbsent.add(letter);
-        }
+        toAddAbsent.add(letter);
         return {letter: letter, color: "bg-absent"};
       }
     });
 
     setUsedLetters(prev => {
-      const newCorrect = prev.correct;
-      const newPresent = prev.present;
-      const newAbsent = prev.absent;
-
-      toAddCorrect.forEach(letter => newCorrect.add(letter))
-      toAddPresent.forEach(letter => newPresent.add(letter))
-      toDeletePresent.forEach(letter => newPresent.delete(letter))
-      toAddAbsent.forEach(letter => newAbsent.add(letter))
-
       return {
-        correct: newCorrect,
-        present: newPresent,
-        absent: newAbsent
+        correct: prev.correct.union(toAddCorrect),
+        present: prev.present.difference(toDeletePresent).union(toAddPresent),
+        absent: prev.absent.union(toAddAbsent)
       }
     });
 
@@ -111,7 +99,7 @@ export default function App() {
   };
 
   function checkLegalWord() {
-    return data.some((obj) => obj.word === currentGuess.join('').toLowerCase())
+    return data.some((obj) => obj.word === currentGuess.join('').toLowerCase()) // Inefficient, but performance is fine on phones
   }
 
   function submitGuess() {
