@@ -99,7 +99,8 @@ export default function App() {
   };
 
   function checkLegalWord() {
-    return data.some((obj) => obj.word === currentGuess.join('').toLowerCase()) // Inefficient, but performance is fine on phones
+    const joinedGuess = currentGuess.join('').toLowerCase();
+    return data.some((obj) => obj.word === joinedGuess)
   }
 
   function submitGuess() {
