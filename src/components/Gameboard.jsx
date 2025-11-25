@@ -24,11 +24,17 @@ export default function Gameboard({ gameOver,illegalWord, currentGuess, submissi
   useGSAP(() => {
     if (lastSubmission?.join('') === answer.join('')) {
       const targets = gsap.utils.toArray(".box-letter");
-      gsap.to(targets, {
-        y: -15,
-        duration: 0.25,
-        stagger: 0.1
-      });
+      tl.current = gsap
+        .timeline({repeat: -1})
+        .to(targets, {
+          y: -15,
+          duration: 0.25,
+          stagger: {
+            each: 0.1,
+            yoyo: true,
+            repeat: 1
+          }
+        });
     };
   }, {dependencies: [gameOver], scope: prevRow});
 
