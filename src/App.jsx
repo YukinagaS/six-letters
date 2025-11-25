@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Gameboard from "./components/Gameboard";
 import Keyboard from "./components/Keyboard";
+import Modal from "./components/Modal";
 import data from './data/words_defs_pos.json';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -9,11 +10,14 @@ gsap.registerPlugin(useGSAP);
 
 export default function App() {
   const dayOne = 20251119;
-  const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
+  const lastDate = 20251118;
+  // const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
   const [today] = useState(getTodaysDate());
 
   //Initialize answer and variables for checking
-  const [answer] = useState(getTodaysWord());
+  const todaysObject = data[today - dayOne];
+  const [answer] = useState(todaysObject.word.toUpperCase().split(''));
+  const [answerDefinition] = useState(todaysObject.definition);
   const answerLetterCount = {};
   answer.forEach((letter => {
     answerLetterCount[letter] = (answerLetterCount[letter] ? answerLetterCount[letter] + 1 : 1);
@@ -32,21 +36,11 @@ export default function App() {
   const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter);
   const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''));
   const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
-
-  // GSAP animation for Definition
-  const definitionAnimRef = useRef();
-  useGSAP(() => {
-    gsap.fromTo(definitionAnimRef.current, {opacity: 0}, {opacity: 1})
-  }, { dependencies: [gameOver] });
+  const [closeModal, setCloseModal] = useState(false);
 
   function getTodaysDate() {
     const date = new Date();
     return (date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate());
-  };
-
-  function getTodaysWord() {
-    const todaysObject = data[today - dayOne];
-    return todaysObject.word.toUpperCase().split('');
   };
 
   function addGuessedLetter(letter) {
@@ -156,7 +150,7 @@ export default function App() {
     <div className="min-h-screen w-full bg-black text-white text-center flex flex-col">
       <header className="py-5">
         <h1 className="text-4xl sm:text-5xl font-black tracking-widest">
-          { gameOver ? `${answer.join('')}` : 'SIXTER'}
+          SIXTER
         </h1>
       </header>
 
@@ -170,21 +164,21 @@ export default function App() {
           answer={answer}
           />
 
-          <section ref={definitionAnimRef} className="w-sm">
-            { gameOver &&
-            <>
-              <h3 className="text-xl sm:text-2xl">DEFINITION</h3>
-              <p className="font-light text-sm sm:text-lg">{data[today - dayOne].definition}.</p>
-            </>
-            }
-          </section>
-
         <Keyboard
           gameOver={gameOver}
           addGuessedLetter={addGuessedLetter}
           removeGuessedLetter={removeGuessedLetter}
           submitGuess={submitGuess}
           usedLetters={usedLetters}
+        />
+
+        <Modal
+        gameOver={gameOver}
+        closeModal={closeModal}
+        setCloseModal={setCloseModal}
+        answer={answer}
+        answerDefinition={answerDefinition}
+        lastSubmission={lastSubmission}
         />
       </main>
 
