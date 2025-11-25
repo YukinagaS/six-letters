@@ -10,8 +10,7 @@ gsap.registerPlugin(useGSAP);
 
 export default function App() {
   const dayOne = 20251119;
-  const lastDate = 20251118;
-  // const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
+  const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
   const [today] = useState(getTodaysDate());
 
   //Initialize answer and variables for checking
