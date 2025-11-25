@@ -27,11 +27,7 @@ export default function Gameboard({ gameOver,illegalWord, currentGuess, submissi
       gsap.to(targets, {
         y: -15,
         duration: 0.25,
-        stagger: {
-          each: 0.1,
-          repeat: 1,
-          yoyo: true
-        }
+        stagger: 0.1
       });
     };
   }, {dependencies: [gameOver], scope: prevRow});
