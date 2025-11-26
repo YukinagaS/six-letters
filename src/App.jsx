@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Gameboard from "./components/Gameboard";
 import Keyboard from "./components/Keyboard";
 import Modal from "./components/Modal";
-import data from './data/words_defs_pos.json';
+import data from './data/data-1.json';
+import legalWords from './data/legal-words.json'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -93,7 +94,7 @@ export default function App() {
 
   function checkLegalWord() {
     const joinedGuess = currentGuess.join('').toLowerCase();
-    return data.some((obj) => obj.word === joinedGuess)
+    return legalWords.some((word) => word === joinedGuess)
   }
 
   function submitGuess() {
