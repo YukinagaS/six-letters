@@ -51,7 +51,7 @@ export default function Gameboard({ gameOver,illegalWord, currentGuess, submissi
 
   return (
     <section className="flex flex-col items-center gap-2">
-      {Array.from({ length: 7 }, (_, rowIndex) => {
+      {Array.from({ length: 6 }, (_, rowIndex) => {
         let rowData;
         if (rowIndex < submissions.length){
           rowData = submissions[rowIndex];

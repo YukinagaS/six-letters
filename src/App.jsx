@@ -34,7 +34,7 @@ export default function App() {
   });
 
   const lastSubmission = submissions[submissions.length - 1]?.map((obj) => obj.letter);
-  const gameOver = (submissions.length === 7 || lastSubmission?.join('') === answer.join(''));
+  const gameOver = (submissions.length === 6 || lastSubmission?.join('') === answer.join(''));
   const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
   const [closeModal, setCloseModal] = useState(false);
 
