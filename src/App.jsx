@@ -10,12 +10,15 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP);
 
 export default function App() {
-  const dayOne = 20251119;
+  const dayOne = new Date(2025, 10, 19);
   const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
-  const [today] = useState(getTodaysDate());
+  const today = new Date();
+
+  // Calculate days since inception, divisor is milliseconds in day.
+  const puzzleIndex = Math.round((today - dayOne) / (1000 * 60 * 60 * 24));
 
   //Initialize answer and variables for checking
-  const todaysObject = data[today - dayOne];
+  const todaysObject = data[puzzleIndex];
   const [answer] = useState(todaysObject.word.toUpperCase().split(''));
   const [answerDefinition] = useState(todaysObject.definition);
   const answerLetterCount = {};
@@ -37,11 +40,6 @@ export default function App() {
   const gameOver = (submissions.length === 6 || lastSubmission?.join('') === answer.join(''));
   const illegalWord = (currentGuess.length === 6 && !checkLegalWord());
   const [closeModal, setCloseModal] = useState(false);
-
-  function getTodaysDate() {
-    const date = new Date();
-    return (date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate());
-  };
 
   function addGuessedLetter(letter) {
     if(currentGuess.length < 6){
