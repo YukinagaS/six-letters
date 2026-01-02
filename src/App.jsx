@@ -11,8 +11,12 @@ gsap.registerPlugin(useGSAP);
 
 export default function App() {
   const dayOne = new Date(2025, 10, 19);
-  const lastDate = parseInt(localStorage.getItem('lastPlayDate'));
-  const today = new Date();
+  const lastDate = new Date(localStorage.getItem('lastPlayDate'));
+  console.log(`Last: ${lastDate}`);
+  const rawDate = new Date();
+  const today = new Date(rawDate.toDateString());
+  console.log(lastDate.getTime() === today.getTime());
+
 
   // Calculate days since inception, divisor is milliseconds in day.
   const puzzleIndex = Math.round((today - dayOne) / (1000 * 60 * 60 * 24));
@@ -28,11 +32,11 @@ export default function App() {
 
   const [currentGuess, setCurrentGuess] = useState([]);
   const [submissions, setSubmissions] = useState(() => {
-    const save = (lastDate === today) ? localStorage.getItem('submissions') : null;
+    const save = (lastDate.getTime() === today.getTime()) ? localStorage.getItem('submissions') : null;
     return save ? JSON.parse(save) : [];
   });
   const [usedLetters, setUsedLetters] = useState(() => {
-    const save = (lastDate === today) ? localStorage.getItem('usedLetters') : null;
+    const save = (lastDate.getTime() === today.getTime()) ? localStorage.getItem('usedLetters') : null;
     return save ? restoreUsedLettersFromSave(save) : {'correct': new Set(),'present': new Set(),'absent': new Set()};
   });
 
@@ -139,7 +143,7 @@ export default function App() {
   }, [currentGuess, submissions]);
 
   useEffect(() => {
-    localStorage.setItem('lastPlayDate', today)
+    localStorage.setItem('lastPlayDate', today.toDateString());
     localStorage.setItem('submissions', JSON.stringify(submissions));
     localStorage.setItem('usedLetters', JSON.stringify(convertUsedLettersForSave()));
   }, [submissions, usedLetters]);
